@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "title": "Vintage Watch",
+      "description": "A classic vintage wristwatch from the 80s, perfect for collectors.",
+      "currentBidPrice": 150.00,
+      "timeLeft": "2d 3h",
+      "bidsCount": 12,
+      "image": "https://example.com/images/vintage_watch.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Antique Vase",
+      "description": "A rare, hand-painted antique vase from the 18th century.",
+      "currentBidPrice": 200.00,
+      "timeLeft": "5d 10h",
+      "bidsCount": 18,
+      "image": "https://example.com/images/antique_vase.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Modern Art Painting",
+      "description": "A beautiful abstract painting by a renowned contemporary artist.",
+      "currentBidPrice": 350.00,
+      "timeLeft": "1d 6h",
+      "bidsCount": 25,
+      "image": "https://example.com/images/art_painting.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Luxury Handbag",
+      "description": "A limited-edition leather handbag from a famous designer.",
+      "currentBidPrice": 450.00,
+      "timeLeft": "4d 2h",
+      "bidsCount": 30,
+      "image": "https://example.com/images/luxury_handbag.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Rare Coin Collection",
+      "description": "An exclusive collection of rare coins from the Roman Empire.",
+      "currentBidPrice": 1200.00,
+      "timeLeft": "3d 9h",
+      "bidsCount": 15,
+      "image": "https://example.com/images/coin_collection.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Vintage Guitar",
+      "description": "A well-maintained vintage electric guitar, perfect for musicians and collectors.",
+      "currentBidPrice": 800.00,
+      "timeLeft": "6d 12h",
+      "bidsCount": 10,
+      "image": "https://example.com/images/vintage_guitar.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Sports Car Model",
+      "description": "A detailed scale model of a classic sports car, ideal for collectors.",
+      "currentBidPrice": 100.00,
+      "timeLeft": "12h 30m",
+      "bidsCount": 22,
+      "image": "https://example.com/images/sports_car_model.jpg"
+    }
+  ]
+  
