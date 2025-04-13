@@ -1,7 +1,7 @@
 import React, {useEffect,useState} from 'react';
 import Item from '../Item/Item';
 
-const Items = () => {
+const Items = ({handleitems}) => {
 
 const[items,setItems]=useState([]);   
 
@@ -30,7 +30,8 @@ console.log(items)
        </thead>
        <tbody>
          {items.map((item) => (
-           <Item key={item.id} item={item} />
+<Item handleitems={handleitems} key={item.id} item={item}></Item>
+          
          ))}
        </tbody>
      </table>

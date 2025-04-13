@@ -1,7 +1,8 @@
 import React from 'react';
-import { FaHeart } from "react-icons/fa";
+import { CiHeart } from "react-icons/ci";
 
-const Item = ({ item }) => {
+const Item = ({ item,handleitems }) => {
+  // console.log(handleitems)
   return (
     <tr>
       <td>
@@ -20,8 +21,9 @@ const Item = ({ item }) => {
       <td className='text-[#0E2954]'>{item.currentBidPrice}</td>
       <td className='text-[#0E2954]'>{item.timeLeft}</td>
       <td>
-        <button className="btn btn-ghost btn-xs">
-          <FaHeart size={25} className='text-red-600' />
+        <button onClick={()=>handleitems(item)} className="btn btn-ghost btn-xs">
+        <CiHeart size={25}/>
+          {/* <FaHeart size={25} className='' /> */}
         </button>
       </td>
     </tr>
