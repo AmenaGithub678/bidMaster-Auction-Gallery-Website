@@ -16,12 +16,20 @@ import { toast } from 'react-toastify';
 function App() {
 const [markedItem, setmarkedItem] = useState([]);
 
+const [totalBidAmount, setTotalBidAmount] = useState(0);
+
+
 
   const handleitems =(item) =>{
     toast.success('Item Added to your Favorite List');
     console.log(item)
     setmarkedItem([...markedItem,item])
+    
+
+
+    setTotalBidAmount(totalBidAmount + item.currentBidPrice);
   }
+  console.log(totalBidAmount)
 
 const handleRemoveItem =(removeItems) =>{
 const showUpdateItem = markedItem.filter((_, index) => index !== removeItems);
@@ -29,6 +37,8 @@ setmarkedItem(showUpdateItem);
 toast.info('Item removed from your favorite list')
 
 }
+
+
   console.log(markedItem)
   return (
     <>
@@ -41,7 +51,8 @@ toast.info('Item removed from your favorite list')
             Discover and bid on extraordinary items
           </p>
 </div>
-      <div className='main-container flex gap-4 px-6  bg-[#EBF0F5] '>
+
+<div className='main-container flex gap-4 px-6  bg-[#EBF0F5] '>
       <ToastContainer />
         {/* Left - Items Section */}
         <div className='left-container w-[70%] bg-[#FFFFFF] my-20  rounded-2xl'>
@@ -49,7 +60,7 @@ toast.info('Item removed from your favorite list')
           {/* <Items /> */}
         </div>
 
-       
+        {/* Right - Items Section */}
         <div className='right-container w-[30%] p-4 bg-white border rounded-2xl text-center shadow-md my-20  h-[40%]'>
 
         
@@ -57,8 +68,7 @@ toast.info('Item removed from your favorite list')
           
             <FaRegHeart /> Favorite Items
           </h2>
-
-          <div className="divider"></div>
+    <div className="divider"></div>
 
          <div>
 {
@@ -89,24 +99,15 @@ toast.info('Item removed from your favorite list')
                    </div>
                  )
                  ) )}
-          
-
-         
-
-  
-
-
-
-
          </div>
 
-
-
-
-          <div className="divider"></div>
+    <div className="divider"></div>
           <div className='flex justify-between items-center px-4'>
-            <h4 className='text-[#000000] font-normal text-xl'>Total bids Amount</h4>
-            <p className='text-[#000000] font-medium text-xl'>$0000</p>
+
+          <h4 className='text-[#000000] font-normal text-xl'>Total Bid Amount</h4>
+          <p className='text-[#000000] font-medium text-xl'>${totalBidAmount.toFixed(2)}</p>
+
+     
 
 
 
