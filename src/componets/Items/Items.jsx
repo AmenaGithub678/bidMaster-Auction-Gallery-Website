@@ -1,7 +1,7 @@
 import React, {useEffect,useState} from 'react';
 import Item from '../Item/Item';
 
-const Items = ({handleitems}) => {
+const Items = ({handleitems,markedItem}) => {
 
 const[items,setItems]=useState([]);   
 
@@ -30,7 +30,9 @@ console.log(items)
        </thead>
        <tbody>
          {items.map((item) => (
-<Item handleitems={handleitems} key={item.id} item={item}></Item>
+<Item handleitems={handleitems}
+     markedItem={markedItem}
+ key={item.id} item={item}></Item>
           
          ))}
        </tbody>

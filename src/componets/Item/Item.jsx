@@ -1,8 +1,11 @@
 import React from 'react';
 import { CiHeart } from "react-icons/ci";
+import { MdNotInterested } from "react-icons/md";
 
-const Item = ({ item,handleitems}) => {
+const Item = ({ item,handleitems,markedItem}) => {
   // console.log(handleitems)
+
+  const isMarked = markedItem.some(marked => marked.id === item.id);
   return (
     <tr>
       <td>
@@ -21,11 +24,16 @@ const Item = ({ item,handleitems}) => {
       <td className='text-[#0E2954]'>${item.currentBidPrice}</td>
       <td className='text-[#0E2954]'>{item.timeLeft}</td>
       <td>
-        <button onClick={()=>handleitems(item)} 
-        className="btn btn-ghost btn-xs">
-        <CiHeart size={25}/>
-          {/* <FaHeart size={25} className='' /> */}
-        </button>
+
+        <button
+  onClick={() => handleitems(item)}
+  disabled={isMarked}
+  className={`btn btn-ghost btn-xs ${
+    isMarked ? ' text-red-500' : '<MdNotInterested />'
+  }`}
+>
+  <CiHeart size={25} />
+</button>
       </td>
     </tr>
   );

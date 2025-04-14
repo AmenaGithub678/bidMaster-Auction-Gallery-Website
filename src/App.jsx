@@ -18,25 +18,28 @@ const [markedItem, setmarkedItem] = useState([]);
 
 const [totalBidAmount, setTotalBidAmount] = useState(0);
 
-
+const [substractBidAmount, setsubstractBidAmount] =useState(0);
 
   const handleitems =(item) =>{
     toast.success('Item Added to your Favorite List');
     console.log(item)
     setmarkedItem([...markedItem,item])
-    
-
-
     setTotalBidAmount(totalBidAmount + item.currentBidPrice);
   }
   console.log(totalBidAmount)
 
-const handleRemoveItem =(removeItems) =>{
-const showUpdateItem = markedItem.filter((_, index) => index !== removeItems);
-setmarkedItem(showUpdateItem);
-toast.info('Item removed from your favorite list')
+  const handleRemoveItem = (indexToRemove) => {
+    const itemToRemove = markedItem[indexToRemove]; 
+  
+    const showUpdateItem = markedItem.filter((_, index) => index !== indexToRemove);
+    setmarkedItem(showUpdateItem);
+  
 
-}
+    setTotalBidAmount(prev => prev - itemToRemove.currentBidPrice);
+  
+    toast.info('Item removed from your favorite list');
+  };
+  
 
 
   console.log(markedItem)
@@ -56,7 +59,7 @@ toast.info('Item removed from your favorite list')
       <ToastContainer />
         {/* Left - Items Section */}
         <div className='left-container w-[70%] bg-[#FFFFFF] my-20  rounded-2xl'>
-<Items handleitems={handleitems}></Items>
+      <Items handleitems={handleitems} markedItem={markedItem}></Items>
           {/* <Items /> */}
         </div>
 
@@ -105,12 +108,7 @@ toast.info('Item removed from your favorite list')
           <div className='flex justify-between items-center px-4'>
 
           <h4 className='text-[#000000] font-normal text-xl'>Total Bid Amount</h4>
-          <p className='text-[#000000] font-medium text-xl'>${totalBidAmount.toFixed(2)}</p>
-
-     
-
-
-
+          <p className='text-[#000000] font-medium text-xl'>${totalBidAmount.toFixed(2)} </p>
           </div>
         </div>
       </div>
