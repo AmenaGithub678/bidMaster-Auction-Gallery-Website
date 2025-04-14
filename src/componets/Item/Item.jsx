@@ -1,7 +1,8 @@
 import React from 'react';
-import { CiHeart } from "react-icons/ci";
-import { MdNotInterested } from "react-icons/md";
+// import { CiHeart } from "react-icons/ci";
 
+
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 const Item = ({ item,handleitems,markedItem}) => {
   // console.log(handleitems)
 
@@ -25,15 +26,23 @@ const Item = ({ item,handleitems,markedItem}) => {
       <td className='text-[#0E2954]'>{item.timeLeft}</td>
       <td>
 
-        <button
-  onClick={() => handleitems(item)}
-  disabled={isMarked}
-  className={`btn btn-ghost btn-xs ${
-    isMarked ? ' text-red-500' : '<MdNotInterested />'
+      <button
+  onClick={() => {
+    if (!isMarked) {
+      handleitems(item);
+    }
+  }}
+  className={`btn btn-ghost btn-xs rounded-full p-1 transition-colors duration-300 ${
+    isMarked
+      ? 'text-red-500 cursor-not-allowed'
+      : 'hover:bg-gray-500 hover:text-red-500 cursor-pointer rounded-2xl'
   }`}
+  title={isMarked ? "Already in favorites" : "Add to favorites"}
 >
-  <CiHeart size={25} />
+  {isMarked ? <FaHeart size={20} /> : <FaRegHeart size={20} />}
 </button>
+
+
       </td>
     </tr>
   );
