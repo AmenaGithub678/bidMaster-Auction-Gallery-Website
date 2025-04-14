@@ -16,9 +16,9 @@ import { toast } from 'react-toastify';
 function App() {
 const [markedItem, setmarkedItem] = useState([]);
 
-const [totalBidAmount, setTotalBidAmount] = useState(0);
+ const [totalBidAmount, setTotalBidAmount] = useState(0);
 
-const [substractBidAmount, setsubstractBidAmount] =useState(0);
+
 
   const handleitems =(item) =>{
     toast.success('Item Added to your Favorite List');
