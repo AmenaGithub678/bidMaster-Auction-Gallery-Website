@@ -47,10 +47,10 @@ const [markedItem, setmarkedItem] = useState([]);
     <>
       <Navbar />
       <Banner />
-<div className='bg-[#EBF0F5]'>
+<div className='bg-[#EBF0F5] px-12 '>
   
-<h2 className='text-[#0E2954] text-2xl font-bold pt-10 '>Active Auctions</h2>
-          <p className='text-[#000000] font-normal text-lg  '>
+<h2 className='text-[#0E2954] text-2xl font-bold pt-8   '>Active Auctions</h2>
+          <p className='text-[#000000] font-normal text-lg  pt-2.5'>
             Discover and bid on extraordinary items
           </p>
 </div>
